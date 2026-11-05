@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f4ee">
+    <meta name="description" content="Lær guitar og musikforståelse lidt ad gangen med korte, praktiske lektioner.">
+    <title>Guitarven — lær lidt hver dag</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Guitarven – forsiden"><span class="brand-mark" aria-hidden="true">g.</span><span>guitarven</span></a>
+      <button class="profile-button" id="profile-button" type="button" aria-label="Skift din musikstil"><span id="profile-initial">♪</span></button>
+    </header>
+    <main>
+      <section class="welcome" aria-labelledby="welcome-title">
+        <div class="welcome-copy">
+          <p class="eyebrow"><span class="live-dot"></span> DIN DAGLIGE MUSIKPAUSE</p>
+          <h1 id="welcome-title">Lidt musik.<br><span>Meget mere mening.</span></h1>
+          <p class="welcome-text">Små, hyggelige guitarlektioner, der gør noder, skalaer og musikforståelse til noget, du kan mærke.</p>
+        </div>
+        <div class="guitar-art" aria-hidden="true">
+          <span class="art-spark spark-one">✳</span><span class="art-spark spark-two">✳</span>
+          <svg viewBox="0 0 220 260">
+            <path d="M112 13c-15 0-27 12-27 27v63c-23-8-48 4-55 27-9 29 12 55 38 62-4 30 14 54 44 54s48-24 44-54c26-7 47-33 38-62-7-23-32-35-55-27V40c0-15-12-27-27-27Z" fill="#e2a76e" stroke="#674d38" stroke-width="4"/>
+            <path d="M110 13v133" stroke="#674d38" stroke-width="4"/>
+            <path d="M93 22v105M101 18v117M119 18v117M127 22v105" stroke="#fff4dd" stroke-width="2"/>
+            <circle cx="110" cy="147" r="13" fill="#674d38"/><circle cx="55" cy="150" r="7" fill="#674d38"/><circle cx="165" cy="150" r="7" fill="#674d38"/>
+            <path d="M97 70h26M97 88h26M97 106h26M97 124h26" stroke="#674d38" stroke-width="2"/>
+          </svg>
+          <span class="art-note note-one">♪</span><span class="art-note note-two">♫</span>
+        </div>
+      </section>
+      <section class="dashboard" aria-label="Din fremgang">
+        <div class="streak-card"><span class="streak-icon" aria-hidden="true">✦</span><div><strong id="streak-count">0 dage</strong><span>din stime</span></div><span class="streak-fire" aria-hidden="true">🔥</span></div>
+        <div class="progress-card">
+          <div class="progress-top"><span>Din musikrejse</span><strong id="progress-label">0 lektioner</strong></div>
+          <div class="progress-track" role="progressbar" aria-label="Lektioner gennemført" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0"><span id="progress-bar"></span></div>
+          <div class="progress-foot"><span>På vej mod dit næste niveau</span><span id="progress-percent">0%</span></div>
+        </div>
+      </section>
+      <section class="lesson-section" aria-labelledby="lesson-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">DIN LILLE DAGLIGE BID</p><h2 id="lesson-title">Dagens lektion</h2></div>
+          <span class="lesson-time">◷ &nbsp;5 min</span>
+        </div>
+        <article class="lesson-card" id="lesson-card">
+          <div class="lesson-visual" aria-hidden="true">
+            <span class="visual-label" id="lesson-category">MUSIKFORSTÅELSE</span>
+            <div class="staff"><i></i><i></i><i></i><i></i><i></i><span class="staff-note">●</span><span class="staff-note note-b">●</span><span class="staff-note note-c">●</span></div>
+            <span class="visual-mark">♪</span>
+          </div>
+          <div class="lesson-content">
+            <div class="lesson-meta"><span id="lesson-number">LEKTION 1 AF 12</span><span class="lesson-dot"></span><span id="lesson-focus">GRUNDTRIN</span></div>
+            <h3 id="lesson-name">Musikkens alfabet</h3>
+            <p class="lesson-description" id="lesson-description"></p>
+            <div class="lesson-blurb" id="lesson-blurb"></div>
+            <div class="quiz" id="quiz"><p class="quiz-question" id="quiz-question"></p><div class="answer-list" id="answer-list"></div><p class="answer-feedback" id="answer-feedback" aria-live="polite"></p></div>
+            <div class="lesson-actions"><span class="lesson-duration">✦ &nbsp;En lille øvelse</span><button class="primary-button" id="start-button" type="button">Start lektion <span aria-hidden="true">→</span></button><button class="primary-button hidden" id="next-button" type="button">Næste lektion <span aria-hidden="true">→</span></button></div>
+          </div>
+        </article>
+        <p class="gentle-reminder">Ingen øvning er for lille. Tag den i dit eget tempo <span aria-hidden="true">♡</span></p>
+      </section>
+      <section class="path-section" aria-labelledby="path-title">
+        <div class="section-heading path-heading"><div><p class="eyebrow">SMÅ SKRIDT, STOR LYD</p><h2 id="path-title">Din læringssti</h2></div><button class="text-button" id="genre-button" type="button">Skift stil <span aria-hidden="true">↗</span></button></div>
+        <div class="path-list" id="path-list"></div>
+      </section>
+    </main>
+    <footer><span class="brand-mark footer-mark" aria-hidden="true">g.</span><span>Lavet med kærlighed til musik <span aria-hidden="true">♫</span></span></footer>
+    <dialog class="genre-dialog" id="genre-dialog" aria-labelledby="dialog-title">
+      <form method="dialog" class="dialog-close-wrap"><button class="dialog-close" aria-label="Luk" value="close">×</button></form>
+      <p class="eyebrow">DIN MUSIK, DIN VEJ</p><h2 id="dialog-title">Hvad vil du helst spille?</h2>
+      <p class="dialog-intro">Vi tilpasser dine eksempler til den lyd, du holder af. Du kan altid skifte senere.</p>
+      <div class="genre-options" id="genre-options"></div>
+      <button class="primary-button dialog-confirm" id="genre-confirm" type="button" disabled>Det lyder godt <span aria-hidden="true">→</span></button>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
