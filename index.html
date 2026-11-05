@@ -13,6 +13,7 @@
   <body>
     <header class="topbar">
       <a class="brand" href="./" aria-label="Guitarven – forsiden"><span class="brand-mark" aria-hidden="true">g.</span><span>guitarven</span></a>
+      <button class="studio-menu-button" id="open-studio" type="button"><span aria-hidden="true">♫</span> Instrumentværksted</button>
       <button class="profile-button" id="profile-button" type="button" aria-label="Skift din musikstil"><span id="profile-initial">♪</span></button>
     </header>
     <main>
@@ -64,6 +65,68 @@
         </article>
         <p class="gentle-reminder">Ingen øvning er for lille. Tag den i dit eget tempo <span aria-hidden="true">♡</span></p>
       </section>
+      <section class="ear-section" aria-labelledby="ear-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">TRÆN DIT ØRE</p><h2 id="ear-title">Hvilken tone hører du?</h2></div>
+          <span class="lesson-time">♫ &nbsp;Gehør</span>
+        </div>
+        <div class="ear-card">
+          <div class="ear-icon" aria-hidden="true">♫</div>
+          <div class="ear-content">
+            <p class="ear-intro">Lyt til tonen, og vælg noden. Du kan høre den igen, så tit du vil.</p>
+            <button class="primary-button play-tone" id="play-tone" type="button"><span aria-hidden="true">▶</span> Afspil en tone</button>
+            <p class="ear-question" id="ear-question">Hvilken node hørte du?</p>
+            <div class="ear-answers" id="ear-answers"></div>
+            <p class="ear-feedback" id="ear-feedback" aria-live="polite"></p>
+            <div class="note-illustration hidden" id="note-illustration">
+              <svg class="staff-notation" viewBox="0 0 260 112" role="img" aria-labelledby="staff-description">
+                <title id="staff-description">Noden vist i G-nøgle</title>
+                <text class="treble-clef" x="18" y="81">𝄞</text>
+                <g class="staff-lines"><line x1="83" y1="34" x2="238" y2="34"/><line x1="83" y1="46" x2="238" y2="46"/><line x1="83" y1="58" x2="238" y2="58"/><line x1="83" y1="70" x2="238" y2="70"/><line x1="83" y1="82" x2="238" y2="82"/></g>
+                <line class="ledger-line hidden" id="ledger-line" x1="139" x2="185" y1="94" y2="94"/>
+                <ellipse class="staff-note-head" id="staff-note-head" cx="158" cy="82" rx="8" ry="5" transform="rotate(-18 158 82)"/>
+                <line class="staff-note-stem" id="staff-note-stem" x1="165" y1="82" x2="165" y2="42"/>
+              </svg>
+              <div class="note-caption"><strong id="staff-note-name">C4</strong><span>Sådan ser tonen ud i G-nøglen</span></div>
+            </div>
+            <p class="ear-note">Tonerne er syntetiske. Skru gerne lidt op for lyden.</p>
+          </div>
+        </div>
+      </section>
+      <dialog class="studio-dialog" id="studio-dialog" aria-labelledby="sandbox-title">
+        <form method="dialog" class="dialog-close-wrap"><button class="dialog-close" aria-label="Luk instrumentværkstedet" value="close">×</button></form>
+        <div class="section-heading studio-heading">
+          <div><p class="eyebrow">PRØV DIG FREM</p><h2 id="sandbox-title">Instrumentværksted</h2></div>
+          <span class="lesson-time">♫ &nbsp;Spil frit</span>
+        </div>
+        <div class="sandbox-card">
+          <p class="sandbox-intro">Vælg en lyd, og spil tonerne. Tryk, lyt og leg – der er ingen forkerte toner.</p>
+          <div class="instrument-picker" role="group" aria-label="Vælg instrument">
+            <button class="instrument-option selected" type="button" data-instrument="piano" aria-pressed="true"><span aria-hidden="true">▦</span> Klaver</button>
+            <button class="instrument-option" type="button" data-instrument="guitar" aria-pressed="false"><span aria-hidden="true">♩</span> Guitar</button>
+          </div>
+          <div class="piano-wrap" id="piano-wrap"><div class="piano-keyboard" id="piano-keyboard" role="group" aria-label="Klaver, spil en tangent"></div></div>
+          <div class="guitar-wrap hidden" id="guitar-wrap"><div class="fret-labels" id="fret-labels"></div><div class="guitar-fretboard" id="guitar-fretboard" role="group" aria-label="Guitarhals, spil en tone"></div></div>
+          <p class="sandbox-feedback" id="sandbox-feedback" aria-live="polite">Tryk på en tangent for at spille.</p>
+          <div class="drum-area">
+            <div class="drum-heading">
+              <div><h3>Ryst løs på trommen</h3><p>Bevæg telefonen for at spille – eller tryk på trommen.</p></div>
+            </div>
+            <div class="drum-kit" role="group" aria-label="Vælg trommelyd">
+              <button class="drum-choice selected" type="button" data-drum="kick" aria-pressed="true">Stortromme</button>
+              <button class="drum-choice" type="button" data-drum="snare" aria-pressed="false">Lilletromme</button>
+              <button class="drum-choice" type="button" data-drum="hat" aria-pressed="false">Hi-hat</button>
+            </div>
+            <div class="drum-play-row">
+              <button class="drum-pad" id="drum-pad" type="button" aria-label="Spil stortromme"><span aria-hidden="true">🥁</span><small>SLÅ AN</small></button>
+              <div class="motion-controls">
+                <button class="primary-button motion-toggle" id="motion-toggle" type="button">Aktivér bevægelse <span aria-hidden="true">↗</span></button>
+                <p class="motion-status" id="motion-status" aria-live="polite">Tryk for at give adgang til telefonens bevægelsessensor.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </dialog>
       <section class="path-section" aria-labelledby="path-title">
         <div class="section-heading path-heading"><div><p class="eyebrow">SMÅ SKRIDT, STOR LYD</p><h2 id="path-title">Din læringssti</h2></div><button class="text-button" id="genre-button" type="button">Skift stil <span aria-hidden="true">↗</span></button></div>
         <div class="path-list" id="path-list"></div>
